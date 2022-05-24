@@ -27,7 +27,7 @@ const getData = () => {
     // this is to view the data we are getting from the API.
     console.log(response)
     // set is adding new value to the variable Data here. Populate the array with the information in the paranthesis.
-    {setChardisplay ? setData(response.data.results : null}
+    setData(response.data.results)
     setChardisplay(true)
     setEpidisplay(false)
   })
@@ -49,28 +49,33 @@ const getEpisode = () => {
 return (
   // React allows us to return the output on the page.
   <>
+  <div id="heading">
+  <img id="header-img" src="https://flxt.tmsimg.com/assets/p10376284_b_h8_av.jpg"/>
   <h1>Rick and Morty</h1>
+  <button onClick={getData}>Characters</button>
+  <button onClick={getEpisode}>Episodes</button>
+  </div>
 
-<button onClick={setChardisplay ? getData : null}>Characters</button>
-<button onClick={setEpidisplay ? getEpisode : null}>Episodes</button>
-
-  {data.map((info) => {
+<div>
+{chardisplay ?
+  data.map((info) => {
   return (
-    <>
     <Characters characters={info}/>
-    </>
   )
-  })}
+  })
+: null}
+</div>
 
-  {episode.map((stuff) => {
-
+<div>
+{epidisplay ?
+  episode.map((info) => {
   return (
-    <>
-    <Episode episodes={stuff}/>
-    </>
+    <Episode episodes={info}/>
   )
-  })}
+  })
+: null}
 
+  </div>
   </>
 )
 

@@ -1,9 +1,9 @@
 const Characters = (props) => {
   return (
-    <div>
+    <div id="characters">
       <hr/>
-      <p>{props.characters.name}</p>
-      <img src={props.characters.image}/>
+      <p id="name">{props.characters.name}</p>
+      <img id="image" src={props.characters.image}/>
     </div>
   )
 }

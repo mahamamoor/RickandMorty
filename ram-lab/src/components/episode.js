@@ -1,6 +1,6 @@
 const Episode = (props) => {
   return (
-    <div>
+    <div id="episode">
       <hr/>
       <p>{props.episodes.episode}</p>
       <p>{props.episodes.air_date}</p>
